@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            margin: 0 auto;
+            align-items: center;
+            justify-content: center;
+            display: block;
+            text-align: center;
+        }
+        body{
+            transition: 1s;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>Color Picker</h1>
+        <button onclick="change(this)">Red</button>
+        <button onclick="change(this)" >Green</button>
+        <button onclick="change(this)" >Blue</button>
+    </div>
+
+    <script>
+        function change(domObj) {
+            console.log(domObj.textContent)
+            document.body.style.backgroundColor=domObj.textContent
+
+        }
+    </script>
+</body>
+</html>

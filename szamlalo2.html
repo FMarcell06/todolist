@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .gombok{
+            display: flex;
+        }
+        input{
+            height: 50px;
+            width: 50px;
+            display: block;
+        }
+        #main{
+            display: flex;
+            height: 100px;
+            width: 100px;
+            background-color: skyblue;
+            border-radius: 50%;
+            justify-content: center;
+            align-content: center;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <input id="dec" type="button" value="-" onclick="change(-1)">
+        <h1 id="szam">0</h1>
+        <input id="inc" type="button" value="+" onclick="change(+1)">    
+
+    </div>
+
+    <script>
+        let value = 0;
+        function change(step) {
+
+            console.log(step);
+            value+=step;
+            document.querySelector('#szam').textContent=value;
+
+            document.getElementById("dec").disabled=(value<=-5);
+            document.getElementById("inc").disabled=(value>=5);
+        }
+    </script>
+</body>
+</html>

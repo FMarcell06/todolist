@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            border: 1px solid black;
+            width: 25%;
+            align-content: center;
+            justify-content: center;
+            text-align: center;
+            margin: 0 auto;
+            justify-content: space-between;
+        }
+        li{
+            margin: 0 auto;
+            text-align: center;
+            justify-content: space-between;
+            list-style: none;
+            margin-top: 3px;
+            width: 100%;
+        }
+        span{
+            justify-content: space-between;
+        }
+
+        .done {
+            text-decoration: line-through;
+            transition: 1s;
+            transform: translate(120px, 50%);
+            background-color: green;
+        }
+        .pointer {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="main"> 
+        <h1>ToDo App</h1>
+        <input type="text" id="szoveg" placeholder="Add a new task">
+        <input type="button" onclick="addTask()" value="Add Task" id="">
+        <ul id="lista">
+        </ul>
+    </div>
+    <script>
+        function addTask() {
+            let szoveg = document.getElementById("szoveg").value;
+            console.log(szoveg);
+            document.getElementById("szoveg").value = "";
+            if(!szoveg) return
+            console.log('ok');
+            document.getElementById("lista").innerHTML+=`
+            <li>
+                <span class='pointer' onclick="complete(this)">✅</span>
+                <span>${szoveg}</span>
+                <span class='pointer' onclick="remove(this)">❌</span>
+            </li>            
+            `
+        }
+        function complete(domObj) {
+            domObj.nextElementSibling.classList.toggle('done')
+        }
+
+        function remove(domObj) {
+            domObj.parentElement.remove()
+        }
+    </script>
+</body>
+</html>

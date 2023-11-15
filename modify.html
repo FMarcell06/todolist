@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: solid 1px black;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            width: 50%;
+            margin: 0 auto;
+            font-size: 3rem;
+        }
+        button{
+            margin: 0 auto;
+            margin-top: 30px;
+            display: flex;
+        }
+
+    </style>
+</head>
+<body>
+    <div contenteditable>
+        abc
+    </div>
+    <button onclick="modify()">Modify text</button>
+    <h3></h3>
+    
+    <script>
+        function modify(){
+            console.log(document.querySelector("div").innerText)
+            document.querySelector("h3").innerHTML=document.querySelector("div").innerText;
+        }
+    </script>
+</body>
+</html>
